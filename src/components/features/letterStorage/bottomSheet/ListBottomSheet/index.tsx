@@ -15,7 +15,7 @@ interface Props {
 export default function ListBottomSheet({ listArray }: Props) {
   return (
     <>
-      <BottomSheetHeader selectedItem="보낸사람" />
+      <BottomSheetHeader selectedItem="보낸 사람" />
       <S.ListsContainer>
         {listArray.map((item, index) => {
           // NOTE: key값 임시
