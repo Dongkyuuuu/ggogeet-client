@@ -11,7 +11,6 @@ export const HeaderLayout = styled.div`
 export const NavigationsContainer = styled.div`
   display: flex;
   flex-direction: row;
-  padding: ;
 `;
 
 interface NavigationProps {
