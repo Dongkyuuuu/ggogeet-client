@@ -1,12 +1,14 @@
 import Button from "@/src/components/common/Buttons/Button";
 import TopNavigation from "@/src/components/common/TopNavigation";
+import { NavBack } from "@/src/components/common/TopNavigation/atoms";
 import TodoContainer from "@/src/components/features/letter-remind/TodoContainer";
 import { RemindData } from "@/src/data/LetterRemind";
+import { Display2 } from "@/src/styles/commons";
 import styled from "@emotion/styled";
 import Image from "next/image";
 
 const Layout = styled.div`
-  background-color: ${({ theme }) => theme.colors.light};
+  background-color: ${({ theme }) => theme.colors.navy};
   height: 100vh;
 `;
 
@@ -25,27 +27,25 @@ const TodoContainerWrapper = styled.div`
   padding: 0 0 12px 0;
 `;
 
+const TopNavigationTitle = styled.p`
+  color: ${({ theme }) => theme.colors.white};
+  ${Display2}
+`;
+
 const LetterRemindPage = () => {
   return (
     <Layout>
       <TopNavigation
-        title="꼬깃기억"
-        rightElem={
-          <Image
-            src="/icons/hamburger.svg"
-            alt="햄버거아이콘"
-            width={18}
-            height={16}
-          />
-        }
+        title={<TopNavigationTitle>꼬깃 기억</TopNavigationTitle>}
+        leftElem={<NavBack color="white" />}
       />
 
       <MainLayout>
-        <ButtonsContainer>
+        {/* <ButtonsContainer>
           <Button name="모든 꼬깃기억" fontStyle="bold" isDark={true} />
           <Button name="미완료" fontStyle="bold" isDark={true} />
           <Button name="완료" fontStyle="bold" isDark={true} />
-        </ButtonsContainer>
+        </ButtonsContainer> */}
 
         {RemindData.map((item) => {
           return (
