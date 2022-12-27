@@ -41,7 +41,7 @@ const LetterRemindPage = () => {
       />
 
       <MainLayout>
-        <RemindNavigationBar />
+        <RemindNavigationBar selectedItem="모든 메모" />
         {/* <ButtonsContainer>
           <Button name="모든 꼬깃기억" fontStyle="bold" isDark={true} />
           <Button name="미완료" fontStyle="bold" isDark={true} />
