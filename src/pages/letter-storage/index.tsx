@@ -1,10 +1,21 @@
 import TopNavigation from "@/src/components/common/TopNavigation";
+import { NavBack } from "@/src/components/common/TopNavigation/atoms";
 import LetterContainer from "@/src/components/features/letter-storage/LetterContainer";
 import LetterStorageTopNavigation from "@/src/components/features/letter-storage/LetterStorageTopNavigation";
+import { Display2 } from "@/src/styles/commons";
 import styled from "@emotion/styled";
 
 const Layout = styled.div`
+  background-color: ${({ theme }) => theme.colors.navy};
+`;
+
+const MainLayout = styled.div`
   padding: 0 16px;
+`;
+
+const TopNavigationTitle = styled.p`
+  color: ${({ theme }) => theme.colors.white};
+  ${Display2}
 `;
 
 const Header = styled.div`
@@ -77,11 +88,15 @@ const LetterStoragePage = () => {
   const TopNavigations = ["받은 꼬깃", "보낸 꼬깃"];
 
   return (
-    <>
-      <TopNavigation title="보관함" rightElem={<TopNavigationRightElem />} />
+    <Layout>
+      <TopNavigation
+        title={<TopNavigationTitle>꼬깃 보관함</TopNavigationTitle>}
+        leftElem={<NavBack color="white" />}
+        rightElem={<TopNavigationRightElem />}
+      />
 
-      <Layout>
-        <LetterStorageTopNavigation navigations={TopNavigations} />
+      <MainLayout>
+        {/* <LetterStorageTopNavigation navigations={TopNavigations} /> */}
 
         <Header>
           <div>최근 받은 순</div>
@@ -95,8 +110,8 @@ const LetterStoragePage = () => {
             </LetterContainerWrapper>
           );
         })}
-      </Layout>
-    </>
+      </MainLayout>
+    </Layout>
   );
 };
 
