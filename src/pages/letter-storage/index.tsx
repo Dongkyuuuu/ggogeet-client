@@ -44,7 +44,7 @@ const LetterKindSelect = styled(Select)`
 `;
 
 const LetterContainerWrapper = styled.div`
-  padding: 0 0 8px 0;
+  padding: 0 0 12px 0;
 `;
 
 const Space = styled.div`
