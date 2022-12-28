@@ -40,12 +40,23 @@ export const Sender = styled.p`
 `;
 
 export const ContentContainer = styled.div`
+  display: flex;
+  flex-direction: row;
   margin: 20px 0 10px 0;
 `;
 
 export const Content = styled.p`
   color: ${({ theme }) => theme.colors.white};
+  padding: 0 2px;
   ${Body4};
+`;
+
+interface quotationProps {
+  color: string;
+}
+
+export const Quotation = styled.p<quotationProps>`
+  color: ${({ color }) => color};
 `;
 
 export const Date = styled.p`
