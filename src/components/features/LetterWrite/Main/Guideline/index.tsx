@@ -114,7 +114,7 @@ const Guideline = ({ onClose }: GuidelineProps) => {
               <div>
                 <Checkbox
                   id="new-guideline-public-check"
-                  isChecked={isNewGuidelinePublicChecked}
+                  checked={isNewGuidelinePublicChecked}
                   onChange={() => {
                     setIsNewGuidelinePublicChecked((prev) => !prev);
                   }}
